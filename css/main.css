@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+/* nav section */
+.flex {
+    display: flex;
+    gap: var(--gap, 3rem);
+}
+
+
+
+/* primary-header */
+.primary-header{
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+body{
+    background-image: url("../images/insta\ pic.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center; 
+    
+    overflow: hidden;
+}
+
+.primary-navigation{
+    list-style: none;
+
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(0.8rem);
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+.primary-navigation a > [ aria-hidden="true"] {
+    font-weight: 700;
+    margin-inline-end: 0.75em;
+}
+@media screen and (max-width: 320px) {
+    .primary-navigation{
+        --gap: 2em;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;   
+    }
+    .primary-navigation [data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background: url("../images/icons8-menu-40.png");
+        background-repeat: no-repeat;
+        width: 3rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+
+        transform: translateX(50%);
+    }
+    
+}
